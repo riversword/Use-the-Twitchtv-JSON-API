@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="Use the Twitchtv JSON API.css">
+</head>
+<body>
+	<div class="container-fluid">
+		<header>
+			<h1 class="text-center">Use the Twitchtv JSON API</h1>
+			<h3 class="text-center">for FreeCodeCamp</h3>
+		</header>
+	</div>
+	<div class="container">
+		
+		<!--PC端-->
+		<div class="row">
+			<div class="col-sm-3 hidden-xs"></div>
+			<ul class="nav nav-tabs">
+  				<li class="active col-sm-2 col-xs-4 text-center"><a href="#">All</a></li>
+  				<li class="col-sm-2 col-xs-4 text-center"><a href="#">Online</a></li>
+  				<li class="col-sm-2 col-xs-4 text-center"><a href="#">Offline</a></li>
+			</ul>
+			<div class="col-sm-3 hidden-xs"></div>
+		</div>
+		<div class="row inputsearch">
+			<div class="col-sm-3 col-xs-1"></div>
+			<div class="col-sm-6 col-xs-10">
+				<div class="search">
+					<div class="input-group">
+            			<input type="text" class="form-control" placeholder="输入搜索内容" name="search">
+            			<span class="input-group-addon "><span class="glyphicon glyphicon-search"></span></span>
+        			</div>
+				</div>
+			</div>
+		</div>
+		<div class="row content">
+			<div class="col-sm-3 col-xs-1"></div>
+			<div class="col-sm-6 col-xs-10">
+				<!--放置直播信息-->
+				<h3 class="text-center isLoading">Reading...</h3><!--显示加载中-->
+				<div id="tvInfo"></div>
+				<!--
+				<div class="row usershow">
+					<div class="col-sm-3 pictureShow"><img class="img-responsive img-circle" src="https://static-cdn.jtvnw.net/jtv_user_pictures/freecodecamp-profile_image-d9514f2df0962329-300x300.png"></div>
+					<div class="col-sm-9 details"> 
+						<p><span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span>offline</span></p><h4><span class="glyphicon glyphicon-user"></span>&nbsp;FreeCodeCamp</h4>
+						<p><a>https://www.twitch.tv/freecodecamp</a></p>
+						<div class="botInfo"><p><span class="glyphicon glyphicon-heart-empty"></span>&nbsp;<span>11270</span></p><p><span>197285</span>&nbsp;<span class="glyphicon glyphicon-eye-open"></span></p></div>
+					</div>
+				</div> 
+				-->
+
+			</div>
+			<div class="col-sm-3 col-xs-1"></div>
+		</div>
+
+		<!--移动端-->
+		
+
+	</div>
+	<!-- <iframe
+   src="https://clips.twitch.tv/embed?clip=IncredulousAbstemiousFennelImGlitch"
+   height="360"
+   width="640"
+   frameborder="0"
+   scrolling="no"
+   allowfullscreen="true">
+</iframe> -->
+<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+<script src="Use the Twitchtv JSON API.js"></script>
+</body>
+</html>
