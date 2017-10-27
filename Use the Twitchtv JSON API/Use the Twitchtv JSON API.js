@@ -193,7 +193,7 @@ $(document).ready(function(){
                                       viewNum=channelData.views;
                                   var content='<div class="row usershow '+lineState+'"><div class="col-sm-3 col-xs-3 pictureShow"><img class="img-responsive img-circle" src="'
                                                 +imgUrl+'"></div><div class="col-sm-9 col-xs-9 details"><p class="text-center"><span class="glyphicon '
-                                                +lineStateIcon+'"></span>&nbsp;<span>'+lineState+'</span></p><h4><a href="'+aUrl+'"><span class="glyphicon glyphicon-user"></span>&nbsp;'
+                                                +lineStateIcon+'"></span>&nbsp;<span>'+lineState+'</span></p><h4><a href="'+aUrl+'" target="_blank"><span class="glyphicon glyphicon-user"></span>&nbsp;'
                                                 + nameText +'</a></h4><div class="botInfo"><p><span class="glyphicon glyphicon-heart-empty"></span>&nbsp;<span>'
                                                 +followNum+'</span></p><p><span>'
                                                 +viewNum+'</span>&nbsp;<span class="glyphicon glyphicon-eye-open"></span></p></div></div></div>';
