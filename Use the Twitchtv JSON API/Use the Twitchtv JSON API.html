@@ -1,10 +1,11 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+<title>use twitchtv json api</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="Use the Twitchtv JSON API.css">
+<link rel="stylesheet" href="Use the Twitchtv JSON API.css">
 </head>
 <body>
 	<div class="container-fluid">
@@ -15,7 +16,7 @@
 	</div>
 	<div class="container">
 		
-		<!--PC端-->
+		<!--PC-->
 		<div class="row">
 			<div class="col-sm-3 hidden-xs"></div>
 			<ul class="nav nav-tabs">
@@ -39,10 +40,10 @@
 		<div class="row content">
 			<div class="col-sm-3 col-xs-1"></div>
 			<div class="col-sm-6 col-xs-10">
-				<!--放置直播信息-->
-				<h3 class="text-center isLoading">Reading...</h3><!--显示加载中-->
+				<!--place the users information-->
+				<h3 class="text-center isLoading">Reading...</h3><!--show loading-->
 				<div id="tvInfo"></div>
-				<!--
+				<!-- an example
 				<div class="row usershow">
 					<div class="col-sm-3 pictureShow"><img class="img-responsive img-circle" src="https://static-cdn.jtvnw.net/jtv_user_pictures/freecodecamp-profile_image-d9514f2df0962329-300x300.png"></div>
 					<div class="col-sm-9 details"> 
@@ -52,23 +53,13 @@
 					</div>
 				</div> 
 				-->
-
 			</div>
 			<div class="col-sm-3 col-xs-1"></div>
 		</div>
-
-		<!--移动端-->
-		
-
 	</div>
-	<!-- <iframe
-   src="https://clips.twitch.tv/embed?clip=IncredulousAbstemiousFennelImGlitch"
-   height="360"
-   width="640"
-   frameborder="0"
-   scrolling="no"
-   allowfullscreen="true">
-</iframe> -->
+	<div class="footer">
+		<span>Copyright &copy;2017&nbsp;riversword.</span> 
+	</div>
 <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
 <script src="Use the Twitchtv JSON API.js"></script>
 </body>
