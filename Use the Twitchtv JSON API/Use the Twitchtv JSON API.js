@@ -15,7 +15,7 @@ $(document).ready(function(){
       hasSearch=false;
 
       users.forEach(function(item){
-        //get user's state of online/offline
+        //获取主播是否在线
         $.ajax({
                   type: "GET",
                   url: urlbase+searchtype[1]+item+'?callback=?',
@@ -28,7 +28,7 @@ $(document).ready(function(){
                       lineState="Online";
                       lineStateIcon="glyphicon-ok-circle";
                     }
-                    //get user's other information
+                    //获取主播信息
                     $.ajax({
                                 type: "GET",
                                 url: urlbase+searchtype[0]+item+'?callback=?',
@@ -39,23 +39,23 @@ $(document).ready(function(){
         });
       });
 
-          //change the style of navigation button when click
+          //点击时改变导航按钮样式
       $('ul.nav-tabs li').click(function(){
         $('ul.nav-tabs li').removeClass('active');
         $(this).addClass('active');
         $('input[name="search"]').val('');
       });
 
-          //show all users
+          //点击all展示数组中的所有主播
       $('ul.nav-tabs li').eq(0).click(function(){
         $('.usershow').show();
         
-        if(hasSearch){
-            //search all again
+        if(hasSearch){//当用户点击过搜索后，再切换回导航栏的all，需要重新加载all数据
+            //清空当前数据，显示加载中
             $('.isLoading').show();
             $('#tvInfo').empty();
             users.forEach(function(item){
-              //get the state of online/offline
+              //获取是否在线
             $.ajax({
                       type: "GET",
                       url: urlbase+searchtype[1]+item+'?callback=?',
@@ -69,7 +69,7 @@ $(document).ready(function(){
                           lineState="Online";
                           lineStateIcon="glyphicon-ok-circle";
                         }
-                        //get more information about user
+                        //获取主播信息
                         $.ajax({
                                     type: "GET",
                                     url: urlbase+searchtype[0]+item+'?callback=?',
@@ -84,15 +84,15 @@ $(document).ready(function(){
 
       });
 
-      //show users online
+      //展示在线的主播
       $('ul.nav-tabs li').eq(1).click(function(){
         $('.Offline').hide();
         $('.Online').show();
         
-        if(hasSearch){
+        if(hasSearch){//当用户点击过搜索后，再切换回导航栏的online，需要重新加载online的主播
             $('.isLoading').show();
-            $('#tvInfo').empty(); //clear the users information
-            //search the user  online 
+            $('#tvInfo').empty(); //清空展示当前的主播
+            //搜索状态为在线的主播
             users.forEach(function(item){
             $.ajax({
                       type: "GET",
@@ -106,7 +106,7 @@ $(document).ready(function(){
                           
                           lineState="Online";
                           lineStateIcon="glyphicon-ok-circle";
-                          //get the more detail information about the user
+                          //获取该主播信息
                           $.ajax({
                                     type: "GET",
                                     url: urlbase+searchtype[0]+item+'?callback=?',
@@ -122,7 +122,7 @@ $(document).ready(function(){
         }//end if
       });
 
-      //show users offline
+      //展示不在线的主播
       $('ul.nav-tabs li').eq(2).click(function(){
         $('.Online').hide();
         $('.Offline').show();
@@ -130,9 +130,9 @@ $(document).ready(function(){
         if(hasSearch){
 
             $('.isLoading').show();
-            $('#tvInfo').empty();//clear the users information
+            $('#tvInfo').empty();//清空当前展示的主播
             users.forEach(function(item){
-            //get the user offline
+            //获取不在线的主播
             $.ajax({
                       type: "GET",
                       url: urlbase+searchtype[1]+item+'?callback=?',
@@ -141,7 +141,7 @@ $(document).ready(function(){
                         if(streamData.stream===null){
                           lineState="Offline";
                           lineStateIcon="glyphicon-remove-circle";
-                          //get the more detail information about the user
+                          //获取该主播信息
                           $.ajax({
                                     type: "GET",
                                     url: urlbase+searchtype[0]+item+'?callback=?',
@@ -179,7 +179,7 @@ $(document).ready(function(){
 
       function searchByChannel(channelData){
                   
-                                  var imgUrl="https://static-cdn.jtvnw.net/jtv_user_pictures/freecodecamp-profile_image-d9514f2df0962329-300x300#.png";//when the picture address is null, show this one
+                                  var imgUrl="https://static-cdn.jtvnw.net/jtv_user_pictures/freecodecamp-profile_image-d9514f2df0962329-300x300#.png";//当json数据中图片地址为空时，默认用这个地址
                                   if(channelData.logo){
                                     imgUrl=channelData.logo;
                                   }
